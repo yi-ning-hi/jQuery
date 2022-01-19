@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <style>
+        .wrap {
+            width: 800px;
+            height: 450px;
+            overflow: hidden;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        .img-wrap {
+            display: flex;
+            width: 4000px;
+            transition: 0.5s;
+            transform: translateX(0px);
+        }
+
+        li img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .dots {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .dots li {
+            width: 60px;
+            height: 10px;
+            border: 1px solid white;
+            margin-bottom: 20px;
+            margin-left: 15px;
+        }
+
+        .dots li:nth-child(1) {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="list-unstyled img-wrap">
+            <li><img src="./imgs/slide1.jpg" alt=""></li>
+            <li><img src="./imgs/slide2.jpg" alt=""></li>
+            <li><img src="./imgs/slide3.jpg" alt=""></li>
+            <li><img src="./imgs/slide4.jpg" alt=""></li>
+            <li><img src="./imgs/slide5.jpg" alt=""></li>
+        </ul>
+        <ul class="list-unstyled dots">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(".dots li").hover(function () {
+            $(this).css("background", "white")
+        }, function () {
+            $(this).siblings().css("background", "none")
+
+        })
+        $(".dots li").eq(0).mouseenter(function () {
+            $(".img-wrap").css("transform","translateX(0px)")
+        })
+        $(".dots li").eq(1).mouseenter(function () {
+            $(".img-wrap").css("transform","translateX(-800px)")
+        })
+        $(".dots li").eq(2).mouseenter(function () {
+            $(".img-wrap").css("transform","translateX(-1600px)")
+        })
+        $(".dots li").eq(3).mouseenter(function () {
+            $(".img-wrap").css("transform","translateX(-2400px)")
+        })
+        $(".dots li").eq(4).mouseenter(function () {
+            $(".img-wrap").css("transform","translateX(-3200px)")
+        })
+    </script>
+</body>
+
+</html>

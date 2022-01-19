@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <table class="table table-bordered">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Elon Musk</td>
+            <td>0912345678</td>
+            <td>Elon Musk@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Mark Zuckerberg</td>
+            <td>0912345678</td>
+            <td>Mark Zuckerberg@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Bill Gates</td>
+            <td>0912345678</td>
+            <td>Bill Gates@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Larry Page</td>
+            <td>0912345678</td>
+            <td>Larry Page@gmail.com</td>
+        </tr>
+    </table>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $("input").click(function () {
+            var $this = $(this);
+            if ("$this:input:not(:checked)") {
+                $(this).closest("tr").css("background", "lightblue")
+            } else {
+                $(this).closest("tr").css("background", "none")
+                console.log("123")
+            }
+        })
+        // $("input").click(function () {
+        //     $(this).closest("tr").css("background", "lightblue")
+        // })
+        // $("input").click(function () {
+        //     $(this).closest("tr").css("background", "white")
+        // })
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>
