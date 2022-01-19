@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="text"></h1>
+    <div class="box">
+        <p>碰一下</p>
+    </div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(".box").on({
+            mouseenter: function () {
+                $("#text").text("mouseenter");
+                $("p").text("點一下")
+            },
+            click: function () {
+                $("#text").text("click");
+                $("p").text("點二下")
+            },
+            dblclick: function () {
+                $("#text").text("dblclick");
+                $("p").text("碰一下")
+            }
+        })
+    </script>
+</body>
+
+</html>

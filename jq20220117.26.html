@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form action="">
+                <div class="form-row">
+                    <div class="form-group">
+                        <select class="add form-select" aria-label="Default select example" name="city" id="city">
+                            <option value="0">基隆</option>
+                            <option value="1">台北</option>
+                            <option value="2">新北</option>
+                            <option value="3">桃園</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="add2 form-select" aria-label="Default select example" name="district"
+                            id="district">
+                            <option value="0">七堵</option>
+                            <option value="1">中正</option>
+                            <option value="2">暖暖</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        //拿文字 .text() => js的innerTEXT
+        //拿value  .val() => js的value
+        //拿html  .html() => js的innerHTML
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義'],
+            ['蘆洲', '三重', '新店'],
+            ['大溪', '陽梅', '中壢'],
+        ];
+
+        // $("#city").change(function () {
+        //     console.log("city value", $("#city").val());
+        //     if ($("#city").val() == 1) {
+        //         $("#district option").eq(0).text("中正");
+        //         $("#district option").eq(1).text("大安");
+        //         $("#district option").eq(2).text("信義");
+        //     }
+        //     if ($("#city").val() == 2) {
+        //         $("#district option").eq(0).text("蘆洲");
+        //         $("#district option").eq(1).text("三重");
+        //         $("#district option").eq(2).text("新店");
+        //     }
+        // })
+
+        // $("#city").change(function () {
+        //     // console.log($("#city").val());
+        //     console.log(districtArray[$("#city").val()]);
+        //     // $("#district option").text(districtArray[$("#city").val()])
+        //     $("#district option").eq(0).text(districtArray[$("#city").val()][0])
+        //     $("#district option").eq(1).text(districtArray[$("#city").val()][1])
+        //     $("#district option").eq(2).text(districtArray[$("#city").val()][2])
+        //     // $("#district option").text(districtArray[$("#city").val()])
+        //     // $("#district option").text(districtArray[$("#city").val()])
+        // })
+
+
+        // $("#city").change(function(){
+        //     console.log($("#city").val());
+        //     console.log(districtArray[2]);
+        //     $("#district option").eq(0).text(districtArray[$("#city").val()][0])
+        //     $("#district option").eq(1).text(districtArray[$("#city").val()][1])
+        //     $("#district option").eq(2).text(districtArray[$("#city").val()][2])
+        // })
+        // $("#city").change(function(){
+        //     for (let i = 0; i < 3; i++) {
+        //         $("#district option").eq(i).text(districtArray[$("#city").val()][i])
+        //     }
+        // })
+        $("#city").change(function () {
+            console.log("city value", $("#city").val());
+            $("#district option").each(function (index, value) {
+                console.log(index,value)
+                $(value).text(districtArray[$("#city").val()][index]+"區")
+                // console.log(districtArray[$("#city").val()]);
+                // console.log(districtArray[$("#city").val()][index]);
+            })
+        })
+    </script>
+</body>
+
+</html>

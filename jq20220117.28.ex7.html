@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            height: 300vh;
+        }
+
+        .wrap {
+            position: fixed;
+            width: 100%;
+            height: 5px;
+            background-color: beige;
+        }
+
+        .box {
+            width: 10%;
+            height: 5px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        
+         $(window).scroll(function(){
+             $(".box").css("width",`${$(window).scrollTop()/($("body").height()-$(window).height())*100}`+"%")
+            console.log("scrollTop",$(window).scrollTop());
+            console.log("scrollLeft",$(window).scrollLeft());
+            console.log("width",$(window).width());
+            console.log("height",$(window).height());
+            console.log("body width",$("body").width());
+            console.log("body height",$("body").height());
+            console.log($(window).scrollTop()/($("body").height()-$(window).height()))
+        })
+    </script>
+</body>
+
+</html>
