@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: darkseagreen;
+            transition: .5s;
+        }
+
+        .blue {
+            background-color: khaki;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="addClas">add Class</button>
+    <button id="removeClass">remove Class</button>
+    <button id="toggleClass">toggle Class</button>
+    <button id="hasClass">has Class</button>
+    <div class="box"></div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $("#addClas").click(function () {
+            $(".box").addClass("blue")
+        })
+        $("#removeClass").click(function () {
+            $(".box").removeClass("blue")
+        })
+        $("#toggleClass").click(function () {
+            $(".box").toggleClass("blue")
+        })
+        $("#hasClass").click(function () {
+            if ($(".box").hasClass("blue")) {
+                $(".box").removeClass("blue")
+            } else {
+                $(".box").addClass("blue")
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">box</div>
+    <button>click</button>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        console.log($(".box").css("color"));
+
+        var style = {
+            color: "#fff",
+            background: "#000",
+        };
+        var style2 = {
+            color: "#000",
+            background: "#afa",
+        };
+        $("button").click(function () {
+            if ($(".box").css("color") == "rgb(0, 0, 0)")  {
+                $(".box").css(style);
+            } else {
+                $(".box").css(style2);
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

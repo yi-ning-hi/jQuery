@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +8,33 @@
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
     <style>
-        .color-demo-area{
+        .color-demo-area {
             height: 400px;
             background-color: #777;
         }
-        .color-select-area{
+
+        .color-select-area {
             height: 400px;
             background-color: #eee;
         }
-        .color-circle{
+
+        .color-circle {
             height: 60px;
             width: 60px;
             border-radius: 50%;
             margin: 8px;
         }
-        .color-circle:nth-child(1){
-            background-color:lightsalmon;
+
+        .color-circle:nth-child(1) {
+            background-color:lightpink;
         }
-        .color-circle:nth-child(2){
-            background-color: lightcoral;
+
+        .color-circle:nth-child(2) {
+            background-color:lightsalmon
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -45,5 +51,27 @@
     </div>
     <script src="./jquery-3.6.0.min.js"></script>
     <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // $(".color-circle:nth-child(1)").click(function () {
+        //     console.log("hi");
+        //     $(".color-demo-area").css("background",$(".color-circle:nth-child(1)").css("background"));
+        // })
+        // $(".color-circle:nth-child(2)").click(function () {
+        //     $(".color-demo-area").css("background",$(".color-circle:nth-child(2)").css("background"));
+        // })
+
+        const circle = document.querySelectorAll(".color-circle");
+        const color_demo_area =document.querySelector(".color-demo-area");
+        //circle是nodelist偽陣列，無法直接使用addEventListener
+        circle.forEach(function(el){
+            el.addEventListener("click",function(){
+            console.log("hi",getComputedStyle(this).backgroundColor);
+            color_demo_area.style.backgroundColor = getComputedStyle(this).backgroundColor
+        })
+        })
+        
+        
+    </script>
 </body>
+
 </html>

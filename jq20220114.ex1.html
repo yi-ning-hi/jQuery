@@ -39,22 +39,22 @@
     <script src="./jquery-3.6.0.min.js"></script>
     <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // $("input").click(function () {
+        //     if ($(this).prop("checked")) {
+        //         $(this).closest("tr").css("background", "lightblue")
+        //     } else{
+        //         $(this).closest("tr").css("background", "none")
+        //         console.log("123")
+        //     }
+        // })
         $("input").click(function () {
-            var $this = $(this);
-            if ("$this:input:not(:checked)") {
-                $(this).closest("tr").css("background", "lightblue")
-            } else {
-                $(this).closest("tr").css("background", "none")
-                console.log("123")
-            }
+            $("tr").css("background", "none")
+
+            $("input:checked").closest("tr").css("background", "lightblue")
+            console.log("123")
+
         })
-        // $("input").click(function () {
-        //     $(this).closest("tr").css("background", "lightblue")
-        // })
-        // $("input").click(function () {
-        //     $(this).closest("tr").css("background", "white")
-        // })
-        
+
 
 
 

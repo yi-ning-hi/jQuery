@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/css/all.css">
+    <style>
+        .wrap {
+            width: 800px;
+            height: 400px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+    <div class="text-center">
+        <div class="div">
+            <button id="up">
+                <i class="fas fa-caret-up"></i>
+            </button>
+        </div>
+        <div class="div">
+            <button class="mx-2" id="left">
+                <i class="fas fa-caret-left"></i>
+            </button>
+            <button class="mx-2" id="right">
+                <i class="fas fa-caret-right"></i>
+            </button>
+        </div>
+        <div class="div">
+            <button id="down">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+
+    </div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        // $("#left").click(function () {
+        //     if (parseInt($(".box").css("left")) > 0) {
+        //         $(".box").css("left", "-=100")
+        //     }
+        // })
+        // $("#up").click(function () {
+        //     if (parseInt($(".box").css("top")) > 0) {
+        //     $(".box").css("top", "-=100")}
+        // })
+        // $("#right").click(function () {
+        //     if (parseInt($(".box").css("left")) < 700) {
+        //     $(".box").css("left", "+=100")}
+        // })
+        // $("#down").click(function () {
+        //     if (parseInt($(".box").css("top")) < 300) {
+        //     $(".box").css("top", "+=100")}
+        // })
+
+
+        $(document).on("keydown",function(){
+            if(event.which === 39 && (parseInt($(".box").css("left")) < 700)){
+                $(".box").css("left", "+=100")
+            }
+        })
+        $(document).on("keydown",function(){
+            if(event.which === 38){
+                $(".box").css("top", "-=100")
+            }
+        })
+        $(document).on("keydown",function(){
+            if(event.which === 37){
+                $(".box").css("left", "-=100")
+            }
+        })
+        $(document).on("keydown",function(){
+            if(event.which === 40){
+                $(".box").css("top", "+=100")
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>
